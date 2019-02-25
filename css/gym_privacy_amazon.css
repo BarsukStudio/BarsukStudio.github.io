@@ -1,0 +1,117 @@
+body {
+	font-family: 'PT Sans', sans-serif;
+}
+
+/* Header ********************************************************************************************************************* */
+.header {
+	background: #555134;
+	padding-bottom: 5%;
+	padding-top: 3%;
+}
+.logo {
+	margin-top: 0%;
+}
+.img_logo {
+	width: 50%;
+	margin-left: -5%;
+}
+.menu_item {
+	margin: 3% 8% 0;
+	font-size: 32px;
+	font-weight: 600;
+	color: #E8E39C;
+	text-decoration: none;
+}
+
+.privacy-links {
+	margin-top: 5%;
+}
+
+/* Privacy  ************************************************************************************************************************* */
+.privacy {
+	background: #EFEDE4;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+.privacy-text {
+	width: 70%;
+}
+h1 {
+	margin-left: 5%;
+}
+h3 {
+	margin-left: 3%;
+}
+h4 {
+	margin-left: 5%;
+}
+p {
+	font-size: 18px;
+}
+
+/* Footer ************************************************************************************************************************ */
+.footer {
+	background: #555134;
+	padding-bottom: 0.5%;
+	padding-top: 2%;
+}
+.name {
+	margin-left: 1%;
+	font-size: 16px;
+	color: #B0AD7B;
+}
+.name span {
+	margin-left: 1%;
+}
+
+
+/*
+Extra small <576px	.col-
+Small ≥576px	    .col-sm-
+Medium ≥768px   	.col-md-
+Large ≥992px	    .col-lg-
+Extra large ≥1200px .col-lg-
+*/
+
+/* Медиа запросы*/
+@media screen and (max-width: 575px) {
+	.logo {
+		
+	}
+	.img_logo {
+		width: 80%;
+	}
+	.menu_item {
+		margin-top: 7%;
+	}
+	.privacy-text {
+		width: 100%;
+	}
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+	.logo {
+		
+	}
+	.img_logo {
+		width: 80%;
+	}
+	.privacy-text {
+		width: 90%;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.logo {
+		
+	}
+	.img_logo {
+		width: 65%;
+	}
+	.privacy-text {
+		width: 80%;
+	}
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+	.privacy-text {
+		width: 70%;
+	}
+}
