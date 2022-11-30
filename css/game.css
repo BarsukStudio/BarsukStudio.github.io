@@ -1,0 +1,228 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	-webkit-user-select: none;
+	user-select: none; 
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: 'PT Sans', sans-serif;
+}
+
+.display-block{
+	display: block;
+}
+.display-none{
+	display: none;
+}
+.inline-block{
+	display: inline-block;
+}
+
+.absolute{
+	position: absolute !important;
+}
+
+.relative{
+	position: relative !important;
+}
+.fixed {
+	position: fixed;
+}
+.active {
+
+}
+
+/* Header     *********************************************************************************************************************** */
+.header {
+	background: #555134;
+	padding-bottom: 3%;
+	padding-top: 4%;
+}
+
+.container {
+
+}
+.logo {
+	margin-top: -1%;
+}
+
+.img_logo {
+	display: block;
+	width: 50%;
+	margin-left: -5%;
+}
+.menu_item {
+	margin: 3% 8% 0;
+}
+.menu_item a {
+	font-size: 32px;
+	font-weight: 600;
+	color: #E8E39C;
+	text-decoration: none;
+}
+/* Description ********************** */
+.offer {
+	margin-top: 15%;
+	color: #B0AD7B;
+}
+.offer_intro {
+	margin-top: 4%;
+}
+.offer_text {
+	font-size: 18px;
+	margin-top: 2%;
+	margin-bottom: 3%;
+}
+.game_pick {
+	display: block;
+	width: 70%;
+	margin: 3% auto;
+}
+
+.store-links {
+	margin: 5% auto;
+}
+.apple-store-img {
+	display: block;
+	width: 23%;
+	margin: auto 5%;
+}
+.google-store-img {
+	display: block;
+	width: 25%;
+	margin: auto 5%;
+}
+
+/* Section Game ******************************************************************************************************************* */
+.game-screen {
+	margin-bottom: 3%;
+}
+.screen-shoots {
+	padding-bottom: 5%;
+	padding-top: 3%;
+	background: #77735B;
+}
+.game-screen-port {
+	width: 100%;
+	height: 100%;
+}
+.game-screen-land {
+	width: 100%;
+	height: 100%;
+	padding-top: 6%;
+}
+
+/* Footer ************************************************************************************************************************ */
+.footer {
+	background: #555134;
+	padding-bottom: 0.5%;
+	padding-top: 2%;
+}
+.name {
+	margin-left: 1%;
+	font-size: 16px;
+	color: #B0AD7B;
+}
+.name span {
+	margin-left: 1%;
+}
+
+/*
+Extra small <576px	.col-
+Small ≥576px	    .col-sm-
+Medium ≥768px   	.col-md-
+Large ≥992px	    .col-lg-
+Extra large ≥1200px .col-lg-
+*/
+/* Медиа запросы ******************************************************************************************************************** */
+@media screen and (max-width: 575px) {
+	.menu_item {
+		margin-top: 8%;
+	}
+	.offer {
+		margin-top: 15%;
+	}
+	.img_logo {
+		width: 70%;
+	}
+	.game_pick {
+		width: 100%;
+		margin-top: 3%;
+	}
+	.game-screen-port {
+		width: 70%;
+		padding-top: 5%;
+	}
+	.game-screen-land {
+		width: 90%;
+	}
+	.game-screen-line-port {
+		margin-top: -4%;
+	}
+	.apple-store-img {
+		width: 55.1%;
+	}
+	.google-store-img {
+		width: 60%;
+	}
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+	.offer {
+		margin-top: 12%;
+	}
+	.img_logo {
+		width: 100%;
+	}
+	.game_pick {
+		width: 100%;
+		margin-top: 2%;
+	}
+	.game-screen-port {
+		width: 100%;
+	}
+	.game-screen-land {
+		width: 100%;
+	}
+	.apple-store-img {
+		width: 40.4%;
+	}
+	.google-store-img {
+		width: 44%;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.offer {
+		margin-top: 12%;
+	}
+	.game_pick {
+		width: 90%;
+		margin-top: 5%;
+	}
+	.img_logo {
+		width: 70%;
+	}
+	.game-screen-land {
+		width: 100%;
+	}
+	.google-store-img {
+		width: 30%;
+	}
+	.apple-store-img {
+		width: 27.6%;
+	}
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+	.game_pick {
+		
+	}
+	.apple-store-img {
+		width: 23%;
+	}
+	.google-store-img {
+		width: 25%;
+}
+
+
+
+
+

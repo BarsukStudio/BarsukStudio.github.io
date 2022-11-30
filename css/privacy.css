@@ -17,12 +17,13 @@ body {
 }
 .menu_item {
 	margin: 3% 8% 0;
+}
+.menu_item a {
 	font-size: 32px;
 	font-weight: 600;
 	color: #E8E39C;
 	text-decoration: none;
 }
-
 .privacy-links {
 	margin-top: 5%;
 }
