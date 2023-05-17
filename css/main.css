@@ -20,11 +20,11 @@ img {
 }
 
 .absolute{
-	position: absolute !important;
+	position: absolute;
 }
 
 .relative{
-	position: relative !important;
+	position: relative;
 }
 .fixed {
 	position: fixed;
@@ -189,7 +189,7 @@ Extra large ≥1200px .col-lg-
 		width: 75%;
 	}
 	.game {
-		width: 100% !important;
+		width: 100%;
 	}
 	.game-pick-line {
 		margin-top: 0%;

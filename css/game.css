@@ -19,11 +19,11 @@ html, body {
 }
 
 .absolute{
-	position: absolute !important;
+	position: absolute;
 }
 
 .relative{
-	position: relative !important;
+	position: relative;
 }
 .fixed {
 	position: fixed;
@@ -221,8 +221,3 @@ Extra large ≥1200px .col-lg-
 	.google-store-img {
 		width: 25%;
 }
-
-
-
-
-
