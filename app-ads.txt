@@ -1304,7 +1304,7 @@ yahoo.com, 59781, RESELLER, e1a5b5b6e3255540
 yahoo.com, 59905, RESELLER, e1a5b5b6e3255540
 
 
-google.com, pub-4417067369966000, DIRECT, f08c47fec0942fa0
+google.com, pub-1660844229029925, DIRECT, f08c47fec0942fa0
 
 applovin.com, ff5fdf90ebd07110c278d0e4ac74277e, DIRECT
 
