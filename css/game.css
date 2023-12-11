@@ -28,9 +28,6 @@ html, body {
 .fixed {
 	position: fixed;
 }
-.active {
-
-}
 
 /* Header     *********************************************************************************************************************** */
 .header {
@@ -39,9 +36,6 @@ html, body {
 	padding-top: 4%;
 }
 
-.container {
-
-}
 .logo {
 	margin-top: -1%;
 }
@@ -212,9 +206,6 @@ Extra large ≥1200px .col-lg-
 	}
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-	.game_pick {
-		
-	}
 	.apple-store-img {
 		width: 23%;
 	}
