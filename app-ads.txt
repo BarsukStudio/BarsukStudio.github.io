@@ -1982,3 +1982,59 @@ google.com, pub-4417067369966000, DIRECT, f08c47fec0942fa0
 applovin.com, ff5fdf90ebd07110c278d0e4ac74277e, DIRECT
 facebook.com, 1389673704820507, RESELLER, c3e20eee3f780d68
 pangleglobal.com, 5008075, DIRECT
+
+yandex.com, 107686073, DIRECT
+adne.tv,3992, RESELLER
+uis.mobfox.com, 165, RESELLER
+freewheel.tv, 895601, RESELLER
+rubiconproject.com, 17608,RESELLER, 0bfd66d529a55807
+smartadserver.com, 4140, RESELLER
+synacor.com, 82460, RESELLER,e108f11b2cdf7d5b
+bizzclick.com, 30,RESELLER, 7e936b1feafdaa61
+ignitemediatech.com,pub_61128,RESELLER
+openx.com, 540679900,RESELLER, 6a698e2ec38604c6
+olaex.biz,100039, RESELLER
+smartadserver.com, 3817, RESELLER
+bold-win.com, 45325, RESELLER
+gamoshi.io, 267-b4627, RESELLER
+152media.info,152M312,RESELLER
+opera.com,pub7319665936192, RESELLER, 55a0c5fd61378de3
+triplelift.com,11656,RESELLER,6c33edb13117fd86
+appnexus.com,13227,RESELLER, f5ab79cb980f11d1
+acexchange.co.kr,1416775282, RESELLER
+admixer.co.kr,1610, RESELLER
+adyoulike.com,22389b7165228ff4ecbe2b72818ae524,RESELLER, 4ad745ead2958bf7
+smartadserver.com, 1247, RESELLER
+adform.com, 2664, RESELLER
+indexexchange.com, 186318,RESELLER, 50b1c356f2c5c8fc
+rhythmone.com, 1575167821,RESELLER, a670c89d4a324e47
+yahoo.com, 59338, RESELLER
+marversal.com,116, RESELLER
+e-planning.net,b9165ad221c51225,RESELLER,c1ba615865ed87b2
+triplelift.com,8446,RESELLER,6c33edb13117fd86
+axonix.com,56222,RESELLER
+adform.com, 2742, RESELLER
+silvermob.com,357,RESELLER
+aceex.io, 6, RESELLER
+xandr.com, 13799, RESELLER
+152media.info,152M499,RESELLER
+inmobi.com,30f3830cfef249a3ad46ee1a0bba7af3, RESELLER, 83e75a7ae333ca9d
+lunamedia.io,fa0c2eaa5fae45b888d23460e1cac6e7, RESELLER,524ecb396915caaf
+themediagrid.com, R28I9J, RESELLER, 35d5010d7789b49d
+yahoo.com, 59627, RESELLER
+adview.com,77646260,RESELLER,1b2cc038a11ea319
+openx.com,540326226,RESELLER,6a698e2ec38604c6
+conversantmedia.com,100081,RESELLER,03113cd04947736d
+adcolony.com,382d79cd1387e603,RESELLER,1ad675c9de6b5176
+contextweb.com,562122,RESELLER,89ff185a4c4e857c
+inmobi.com,867c89bb53994aaeb9dae3ce75b03e78,RESELLER,83e75a7ae333ca9d
+bidence.com,3de04db04d6eb28b13281a39b1c16d67,RESELLER
+smartyads.com,368,RESELLER,fd2bde0ff2e62c5d
+opera.com, pub5925993551616,RESELLER, 55a0c5fd61378de3
+video.unrulymedia.com, 524101463, RESELLER, 29bc7d05d309e1bc
+ushareit.com,LCfafa51927e71233e,RESELLER
+freewheel.tv, 1137745, RESELLER
+opera.com,pub9443931419968, RESELLER, 55a0c5fd61378de3
+rubiconproject.com, 20086, RESELLER, 0bfd66d529a5
+adform.com, 2904, RESELLER
+appnexus.com, 14416, RESELLER
