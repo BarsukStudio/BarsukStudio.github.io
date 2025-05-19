@@ -3,17 +3,37 @@ html, body {
 	width: 100%;
 	-webkit-user-select: none;
 	user-select: none; 
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	font-family: 'PT Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+	color: #E8E39C;
 }
 
+/* Container and Grid */
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+}
+
+/* Helper Classes */
 .display-block{
 	display: block;
 }
+
 .display-none{
 	display: none;
 }
+
 .inline-block{
 	display: inline-block;
 }
@@ -25,8 +45,55 @@ html, body {
 .relative{
 	position: relative;
 }
+
 .fixed {
 	position: fixed;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.text-center {
+	text-align: center;
+}
+
+/* Grid classes to replace Bootstrap */
+.logo-item, .col-sm-6 {
+	width: 50%;
+	padding: 0 15px;
+}
+
+.col-sm-12, .col-md-12, .col-lg-12 {
+	width: 100%;
+	padding: 0 15px;
+}
+
+.col-lg-10 {
+	width: 83.333%;
+	padding: 0 15px;
+}
+
+.col-lg-4, .col-md-6 {
+	width: 33.333%;
+	padding: 0 15px;
+}
+
+.col-lg-3, .col-md-4 {
+	width: 25%;
+	padding: 0 15px;
 }
 
 /* Header     *********************************************************************************************************************** */
@@ -38,6 +105,20 @@ html, body {
 
 .logo {
 	margin-top: -1%;
+}
+
+.logo .row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo-item:first-child {
+	text-align: left;
+}
+
+.logo-item:last-child {
+	text-align: right;
 }
 
 .img_logo {
@@ -59,14 +140,89 @@ html, body {
 	margin-top: 15%;
 	color: #E8E39C;
 }
+
+.offer_title {
+	font-size: 24px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
 .offer_intro {
 	margin-top: 4%;
+	font-size: 20px;
+	margin-bottom: 15px;
+	font-weight: bold;
 }
+
 .offer_text {
 	font-size: 18px;
 	margin-top: 2%;
 	margin-bottom: 3%;
 }
+
+.game-section {
+	margin: 25px 0;
+	background: transparent;
+	padding: 15px 0;
+	border-radius: 0;
+	/* border-left: 4px solid #E8E39C; */
+	padding-left: 15px;
+	text-align: left;
+}
+
+.game-section h4 {
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 15px;
+	color: #E8E39C;
+	text-align: center;
+}
+
+.game-section ul {
+	list-style-type: none;
+	padding-left: 0;
+	text-align: left;
+}
+
+.game-section li {
+	position: relative;
+	padding: 5px 0 5px 25px;
+	line-height: 1.5;
+	font-size: 18px;
+	text-align: left;
+}
+
+.game-section li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #E8E39C;
+	font-size: 20px;
+	line-height: 1.2;
+}
+
+.offer_conclusion {
+	font-size: 20px;
+	font-weight: 500;
+	font-style: italic;
+	text-align: center;
+	margin: 30px 0 20px;
+	color: #E8E39C;
+}
+
+.offer_text h4, .offer_text h5 {
+	font-weight: bold;
+	margin: 15px 0 10px;
+}
+
+.offer_text h4 {
+	font-size: 20px;
+}
+
+.offer_text h5 {
+	font-size: 18px;
+}
+
 .game_pick {
 	display: block;
 	width: 70%;
@@ -74,35 +230,64 @@ html, body {
 }
 
 .store-links {
-	margin: 5% auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0% auto;
+	padding: 15px;
+	width: 100%;
+	max-width: 600px;
+	position: relative;
+	z-index: 10;
 }
+
 .apple-store-img {
 	display: block;
 	width: 23%;
 	margin: auto 5%;
+	position: relative;
+	z-index: 2;
 }
+
 .google-store-img {
 	display: block;
 	width: 25%;
 	margin: auto 5%;
+	position: relative;
+	z-index: 2;
 }
 
-/* Section Game ******************************************************************************************************************* */
+.apple-store-img img,
+.google-store-img img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Section Game ************************************************************************** */
 .game-screen {
 	margin-bottom: 3%;
+	padding: 0 15px;
 }
 .screen-shoots {
 	padding-bottom: 5%;
 	padding-top: 3%;
 	background: #77735B;
 }
+
+.one-row-screen {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+}
+
 .game-screen-port {
 	width: 100%;
-	height: 100%;
+	height: auto;
 }
 .game-screen-land {
 	width: 100%;
-	height: 100%;
+	height: auto;
 	padding-top: 6%;
 }
 
@@ -111,6 +296,9 @@ html, body {
 	background: #555134;
 	padding-bottom: 0.5%;
 	padding-top: 2%;
+}
+.credits {
+	width: 100%;
 }
 .name {
 	margin-left: 1%;
@@ -121,15 +309,16 @@ html, body {
 	margin-left: 1%;
 }
 
-/*
-Extra small <576px	.col-
-Small ≥576px	    .col-sm-
-Medium ≥768px   	.col-md-
-Large ≥992px	    .col-lg-
-Extra large ≥1200px .col-lg-
-*/
-/* Медиа запросы ******************************************************************************************************************** */
-@media screen and (max-width: 575px) {
+/* Media Queries ******************************************************************************************************************** */
+@media (max-width: 575px) {
+	.logo-item, .col-sm-6 {
+		width: 100%;
+	}
+	
+	.col-md-4, .col-md-6, .col-lg-3, .col-lg-4 {
+		width: 100%;
+	}
+	
 	.menu_item {
 		margin-top: 8%;
 	}
@@ -150,17 +339,18 @@ Extra large ≥1200px .col-lg-
 	.game-screen-land {
 		width: 90%;
 	}
-	.game-screen-line-port {
-		margin-top: -4%;
-	}
 	.apple-store-img {
-		width: 55.1%;
+		width: 27.6%;
 	}
 	.google-store-img {
-		width: 60%;
+		width: 30%;
 	}
 }
-@media screen and (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 767px) {
+	.col-md-4, .col-md-6, .col-lg-3, .col-lg-4 {
+		width: 50%;
+	}
+	
 	.offer {
 		margin-top: 12%;
 	}
@@ -178,13 +368,21 @@ Extra large ≥1200px .col-lg-
 		width: 100%;
 	}
 	.apple-store-img {
-		width: 40.4%;
+		width: 27.6%;
 	}
 	.google-store-img {
-		width: 44%;
+		width: 30%;
 	}
 }
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
+	.col-lg-3 {
+		width: 33.333%;
+	}
+	
+	.col-lg-4 {
+		width: 50%;
+	}
+	
 	.offer {
 		margin-top: 12%;
 	}
@@ -207,9 +405,17 @@ Extra large ≥1200px .col-lg-
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
 	.apple-store-img {
-		width: 23%;
+		width: 32%;
 	}
 	.google-store-img {
-		width: 25%;
+		width: 35%;
+	}
+}
+@media (min-width: 1200px) {
+	.apple-store-img {
+		width: 50%;
+	}
+	.google-store-img {
+		width: 55%;
 	}
 }

@@ -1,12 +1,363 @@
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
 body {
-	font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', sans-serif;
+    line-height: 1.5;
+    color: #E8E39C;
 }
-div, a {
-	width: 100%;
-	height:  100%;
+
+ol, ul {
+    list-style: none;
 }
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #E8E39C;
+}
+
 img {
-	height:  10%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Base layout */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+/* Utility Classes */
+.d-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Site Specific Styles */
+/* Header */
+.header {
+    background: #555134;
+    padding-bottom: 4%;
+    padding-top: 3%;
+}
+
+.logo .row {
+    display: flex;
+}
+
+.logo-item {
+    width: 50%;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.img_logo {
+    width: 50%;
+}
+
+.menu_item {
+    margin: 3% 8% 0;
+}
+
+.menu_item a {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* Description section */
+.info {
+    margin-top: 3%;
+}
+
+.info .row {
+    display: flex;
+}
+
+.info-item {
+    width: 50%;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.offer {
+    margin-top: 25%;
+}
+
+.offer_title {
+    font-size: 24px;
+    margin-bottom: 6%;
+}
+
+.offer_text {
+    font-size: 18px;
+    margin-top: 0%;
+}
+
+.phone_pick {
+    display: block;
+    margin: 5% auto 0;
+    width: 55%;
+}
+
+.link_logo-group {
+    margin-top: 7%;
+}
+
+.link_logo {
+    width: 10%;
+    max-height: 10%;
+    display: inline-block;
+    margin-right: 5%;
+}
+
+/* Games section */
+#games {
+    background: #77735B;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+
+.games-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.game-item {
+    width: 50%;
+    padding: 0 15px;
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+.game {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.game img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Game page screenshots */
+.screenshots-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.screenshot-item {
+    width: 33.333%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Footer */
+.footer {
+    background: #555134;
+    padding-bottom: 0.5%;
+    padding-top: 2%;
+}
+
+.name {
+    margin-left: 1%;
+    font-size: 16px;
+}
+
+.name span {
+    margin-left: 1%;
+}
+
+/* Media Queries */
+/* Mobile devices (less than 576px) */
+@media (max-width: 575px) {
+    .logo-item, .info-item {
+        width: 100%;
+    }
+    
+    .game-item {
+        width: 100%;
+    }
+    
+    .screenshot-item {
+        width: 100%;
+    }
+    
+    .img_logo {
+        width: 80%;
+    }
+    
+    .menu_item {
+        margin-top: 7%;
+    }
+    
+    .offer {
+        margin-top: 15%;
+    }
+    
+    .phone_pick {
+        width: 50%;
+        margin-top: 10%;
+    }
+    
+    .game {
+        width: 80%;
+    }
+}
+
+/* Small devices (576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .logo-item, .info-item {
+        width: 50%;
+    }
+    
+    .game-item {
+        width: 50%;
+    }
+    
+    .screenshot-item {
+        width: 50%;
+    }
+    
+    .img_logo {
+        width: 80%;
+    }
+    
+    .offer {
+        margin-top: 10%;
+    }
+    
+    .phone_pick {
+        width: 80%;
+    }
+    
+    .game {
+        width: 90%;
+    }
+}
+
+/* Medium devices (768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .logo-item, .info-item {
+        width: 50%;
+    }
+    
+    .game-item {
+        width: 33.333%;
+    }
+    
+    .screenshot-item {
+        width: 33.333%;
+    }
+    
+    .img_logo {
+        width: 65%;
+    }
+    
+    .offer {
+        margin-top: 15%;
+    }
+    
+    .phone_pick {
+        width: 75%;
+    }
+    
+    .game {
+        width: 90%;
+    }
+}
+
+/* Large devices (992px and up) */
+@media (min-width: 992px) {
+    .logo-item, .info-item {
+        width: 50%;
+    }
+    
+    .game-item {
+        width: 25%;
+    }
+    
+    .screenshot-item {
+        width: 25%;
+    }
 }
 
 .display-block{
@@ -35,173 +386,6 @@ img {
 	border: 1px solid red;
 }
 */
-/* Header ********************************************************************************************************************* */
-.header {
-	background: #555134;
-	padding-bottom: 4%;
-	padding-top: 3%;
-}
-.logo {
-	margin-top: 0%;
-}
-.img_logo {
-	/*margin-left: 0%; */
-	width: 50%;
-}
-.menu_item {
-	margin: 3% 8% 0;
-}
-.menu_item a {
-	font-size: 32px;
-	font-weight: 600;
-	color: #E8E39C;
-	text-decoration: none;
-}
-
-/* Description ********************************************************************* */
-.info {
-	margin-top: 3%;
-}
-.offer {
-	margin-top: 25%;
-}
-.offer_title {
-	color: #E8E39C;
-	margin-bottom: 6%;
-}
-.offer_text {
-	font-size: 18px;
-	margin-top: -2%;
-	color: #E8E39C;
-}
-.phone_pick {
-	display: block;
-	margin: 5% auto 0;
-	width: 55%;
-}
-.link_logo-group{
-	margin-top: 7%;
-}
-.link_logo {
-	width: 10%;
-	max-height: 10%;	
-	display: inline-block;
-	margin-right: 5%;
-}
-
-
-/* Games  ************************************************************************************************************************* */
-#games {
-	background: #77735B;
-	padding-top: 4%;
-	padding-bottom: 2%;
-}
-#games .container {
-	
-}
-.game-pick {
-	margin-bottom: 3%;
-	width: 100%;
-	height: 100%;
-}
-.game-pick a {
-	width: 100%;
-	height: 100%;
-}
-
-
-/* Footer ************************************************************************************************************************ */
-.footer {
-	background: #555134;
-	padding-bottom: 0.5%;
-	padding-top: 2%;
-}
-.name {
-	margin-left: 1%;
-	font-size: 16px;
-	color: #E8E39C;
-}
-.name span {
-	margin-left: 1%;
-}
-
-/*
-Extra small <576px	.col-
-Small ≥576px	    .col-sm-
-Medium ≥768px   	.col-md-
-Large ≥992px	    .col-lg-
-Extra large ≥1200px .col-lg-
-*/
-
-/* Медиа запросы*/
-@media screen and (max-width: 575px) {
-	.logo {
-		
-	}
-	.img_logo {
-		width: 80%;
-	}
-	.menu_item {
-		margin-top: 7%;
-	}
-	.offer {
-		margin-top: 15%;
-	}
-	.phone_pick {
-		width: 50%;
-		margin-top: 10%;
-	}
-	.game-pick-line {
-		margin-top: 0%;
-	}
-}
-@media screen and (min-width: 576px) and (max-width: 767px) {
-	.logo {
-		
-	}
-	.img_logo {
-		width: 80%;
-	}
-	.offer {
-		margin-top: 10%;
-	}
-	.phone_pick {
-		width: 80%;
-	}
-	.game-pick-line {
-		margin-top: 0%;
-	}
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
-	.logo {
-		
-	}
-	.img_logo {
-		width: 65%;
-	}
-	.offer {
-		margin-top: 15%;
-	}
-	.phone_pick {
-		width: 75%;
-	}
-	.game {
-		width: 100%;
-	}
-	.game-pick-line {
-		margin-top: 0%;
-	}
-}
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-	.game-pick-line {
-		margin-top: -2%;
-	}
-}
-@media screen and (min-width: 1200px) {
-	.game-pick-line {
-		margin-top: -3%;
-	}
-}
 
 
 

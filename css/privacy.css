@@ -1,5 +1,44 @@
 body {
 	font-family: 'PT Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+	color: #333;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+/* Container and Grid */
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+}
+
+/* Helper Classes */
+.d-flex {
+	display: flex;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.align-items-center {
+	align-items: center;
 }
 
 /* Header ********************************************************************************************************************* */
@@ -36,18 +75,43 @@ body {
 }
 .privacy-text {
 	width: 70%;
+	padding: 20px;
+}
+.privacy-text a {
+	color: #4285f4;
+	text-decoration: none;
+}
+.privacy-text a:hover {
+	text-decoration: underline;
+}
+.privacy-text ul {
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+.privacy-text li {
+	margin-bottom: 5px;
+}
+h1, .privacy-text strong {
+	font-weight: bold;
 }
 h1 {
 	margin-left: 5%;
+	font-size: 24px;
+	margin-bottom: 20px;
 }
 h3 {
 	margin-left: 3%;
+	font-size: 20px;
+	margin-bottom: 15px;
 }
 h4 {
 	margin-left: 5%;
+	font-size: 18px;
+	margin-bottom: 10px;
 }
 p {
 	font-size: 18px;
+	margin-bottom: 15px;
 }
 
 
@@ -66,19 +130,26 @@ p {
 	margin-left: 1%;
 }
 
+/* Grid classes to replace Bootstrap */
+.logo-item, .col-sm-6 {
+	width: 50%;
+	padding: 0 15px;
+}
 
-/*
-Extra small <576px	.col-
-Small ≥576px	    .col-sm-
-Medium ≥768px   	.col-md-
-Large ≥992px	    .col-lg-
-Extra large ≥1200px .col-lg-
-*/
+.col-sm-12, .col-md-12, .col-lg-12 {
+	width: 100%;
+	padding: 0 15px;
+}
 
-/* Медиа запросы*/
+.col-lg-10 {
+	width: 83.333%;
+	padding: 0 15px;
+}
+
+/* Media Queries */
 @media screen and (max-width: 575px) {
-	.logo {
-		
+	.logo-item, .col-sm-6 {
+		width: 100%;
 	}
 	.img_logo {
 		width: 80%;
@@ -91,9 +162,6 @@ Extra large ≥1200px .col-lg-
 	}
 }
 @media screen and (min-width: 576px) and (max-width: 767px) {
-	.logo {
-		
-	}
 	.img_logo {
 		width: 80%;
 	}
@@ -102,9 +170,6 @@ Extra large ≥1200px .col-lg-
 	}
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
-	.logo {
-		
-	}
 	.img_logo {
 		width: 65%;
 	}
