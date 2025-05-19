@@ -230,31 +230,20 @@ html, body {
 }
 
 .store-links {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 15px;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0% auto;
-	padding: 15px;
-	width: 100%;
-	max-width: 600px;
-	position: relative;
-	z-index: 10;
 }
 
-.apple-store-img {
-	display: block;
-	width: 23%;
-	margin: auto 5%;
-	position: relative;
-	z-index: 2;
-}
-
+.apple-store-img,
 .google-store-img {
-	display: block;
-	width: 25%;
-	margin: auto 5%;
-	position: relative;
-	z-index: 2;
+	width: 40%;
+	max-width: 180px;
+	min-width: 100px;
 }
 
 .apple-store-img img,
@@ -412,10 +401,9 @@ html, body {
 	}
 }
 @media (min-width: 1200px) {
-	.apple-store-img {
-		width: 50%;
-	}
+	.apple-store-img,
 	.google-store-img {
-		width: 55%;
+		width: 32%;
+		max-width: 200px;
 	}
 }
