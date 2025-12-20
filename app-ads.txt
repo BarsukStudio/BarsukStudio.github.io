@@ -1,5 +1,7 @@
 google.com, pub-4417067369966000, DIRECT, f08c47fec0942fa0
 
+vungle.com, 643fd620309c84001478a811, DIRECT, c107d686becd2d77
+
 unity.com, 3924903, DIRECT, 96cabb5fbdde37a7
 risecodes.com, 6486c6155b231000010244b0, RESELLER
 loopme.com, 15629, RESELLER, 6c8d5f95897a5a3b
