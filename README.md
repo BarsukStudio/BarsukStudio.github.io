@@ -1,58 +1,55 @@
 # Barsuk Studio Website
 
-This is the official website for Barsuk Studio, showcasing mobile games with screenshots and store links.
+Official site for Barsuk Studio — a showcase of our casual indie tap games with
+screenshots and store links. Built with [Astro](https://astro.build), deployed to
+GitHub Pages via GitHub Actions.
 
-## Features
+## Develop
 
-- Responsive design that works on all device sizes
-- No dependencies on Bootstrap or other frameworks
-- Clean, custom CSS using Flexbox and Grid
-- Showcase of mobile games with screenshots and store links
+```bash
+npm install
+npm run dev       # local dev server at http://localhost:4321
+npm run build     # production build into dist/
+npm run preview   # preview the production build
+```
 
-## Local Development
+Requires Node 22.12+.
 
-To test the website locally, you can use the provided script:
+## Adding or editing a game
 
-1. Make the script executable (if not already):
-   ```
-   chmod +x start_local_server.sh
-   ```
+Everything is data-driven — you don't touch HTML.
 
-2. Run the script:
-   ```
-   ./start_local_server.sh
-   ```
+1. Add the cover art to `public/img/games_pick/` (SVG or PNG, ~1024×500).
+2. Add screenshots to `src/assets/img/screens_<name>/` (PNG). They're converted to
+   WebP automatically at build time.
+3. Add an entry to `src/data/games.json`. Its order controls the order on the home
+   grid. `screenshots` points at the folder from step 2; `icon` at the cover from
+   step 1; `privacy` at the matching page in `public/`.
 
-3. Open your browser and navigate to: http://localhost:8000
+The game page (`/<slug>.html`) is generated from `src/pages/[slug].astro`.
 
-Alternatively, you can use any of these commands directly:
+## Configuration
 
-- Using Python 3: `python3 -m http.server`
-- Using Python 2: `python -m SimpleHTTPServer`
-- Using Node.js: `npx http-server`
+- `src/data/site.ts` — studio name, store/social links, and the **GA4 Measurement
+  ID** (`gaId`). Set a social link to `''` to hide that channel.
+- Privacy policy pages live as standalone files in `public/` (served unchanged).
+- `public/app-ads.txt` and the Google verification file are served as-is.
 
-## File Structure
+## Structure
 
-- `index.html` - Main page showing all games
-- `game.html`, `gym.html`, etc. - Individual game pages
-- `css/main.css` - Main CSS file with responsive grid system
-- `css/game.css` - CSS specific to game pages
-- `img/` - Directory containing all images
+```
+src/
+  data/        games.json (content) + site.ts (config)
+  layouts/     Base.astro — <head>, SEO, JSON-LD, GA4
+  components/  Header, Footer, GameCard, StoreButtons, SocialLinks, BadgerMark
+  pages/       index.astro (home) + [slug].astro (game pages)
+  lib/         games.ts — data loading + screenshot optimization
+  assets/img/  screenshots (build-optimized)
+public/        icons, privacy pages, favicon, app-ads.txt, og-cover
+```
 
-## CSS Framework
+## Deploy
 
-The website uses a custom CSS framework with:
-
-- A 12-column grid system (similar to Bootstrap)
-- Responsive breakpoints at 576px, 768px, and 992px
-- Flexbox-based layout utilities
-- Mobile-first approach
-
-## Browser Compatibility
-
-The website is compatible with:
-- Chrome
-- Firefox
-- Safari
-- Edge
-- Mobile browsers 
+Pushing to `master` triggers `.github/workflows/deploy.yml`, which builds the site
+and publishes `dist/` to GitHub Pages. One-time setup: repo **Settings → Pages →
+Build and deployment → Source: GitHub Actions**.

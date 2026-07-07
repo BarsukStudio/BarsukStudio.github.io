@@ -1,0 +1,148 @@
+[
+  {
+    "slug": "gym2",
+    "title": "Muscle Clicker 2: RPG Gym Game",
+    "category": "Clicker · RPG",
+    "tagline": "Tap and build muscle",
+    "blurb": "Tap, train, and build muscle in Muscle Clicker 2. Upgrade workouts, stats, and equipment in this RPG gym clicker.",
+    "description": [
+      "Muscle Clicker 2: RPG Gym Game is a sport clicker with RPG elements. Build muscle for a skinny guy — it's not as hard as it looks, you just click the screen.",
+      "Train your arms with dumbbells and kettlebells, try the bench press. Use exercise bikes and treadmills for your legs. Pull up and squat as many times as possible, and throw and kick the ball as far as you can."
+    ],
+    "icon": "img/games_pick/site_gym_2-pick.svg",
+    "screenshots": "img/screens_gym_2",
+    "stores": {
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.barsukstudio.muscleclicker2",
+      "appStore": "https://apps.apple.com/us/app/muscle-clicker-2-rpg-gym-game/id1523231092"
+    },
+    "privacy": "gym2_privacy.html"
+  },
+  {
+    "slug": "gym",
+    "title": "Muscle Clicker: Gym Game",
+    "category": "Clicker",
+    "tagline": "Turn the skinny into a hefty man",
+    "blurb": "Train, tap, and build muscle in Muscle Clicker: Gym Game. Raise dumbbells, improve stats, and grow from skinny to huge.",
+    "description": [
+      "Pump your skinny guy with simple taps. Raise dumbbells and pedal to earn experience and money. Each new level builds up his muscles.",
+      "Upgrade arm and leg strength, endurance, and recovery speed. The store sells new dumbbells, exercise bikes, and stimulants. Have a nice game. :)"
+    ],
+    "icon": "img/games_pick/site_gym-pick.svg",
+    "screenshots": "img/screens_gym",
+    "stores": {
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.barsukstudio.muscleclicker",
+      "appStore": "https://itunes.apple.com/us/app/gym-clicker/id1442601203"
+    },
+    "privacy": "gym_privacy.html"
+  },
+  {
+    "slug": "eatrun",
+    "title": "Eat and Run Clicker",
+    "category": "Clicker",
+    "tagline": "Train, run, eat, smash records",
+    "blurb": "Train, run, eat, and smash records in Eat and Run Clicker, a fast-paced fitness clicker with food and competition.",
+    "description": [
+      "Love a good challenge and delicious food? Balance intense workouts and indulgent meals to become the ultimate champion.",
+      "The faster you tap, the faster you train, run, and eat — every tap counts toward your success."
+    ],
+    "icon": "img/games_pick/site_eatrun-pick.svg",
+    "screenshots": "img/screens_eatrun",
+    "stores": {
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.barsukstudio.eatandrunclicker",
+      "appStore": ""
+    },
+    "privacy": "eat_and_run_privacy_policy.html"
+  },
+  {
+    "slug": "energy",
+    "title": "Energy Clicker: Light up world",
+    "category": "Clicker",
+    "tagline": "Every click brings more light",
+    "blurb": "Generate power, upgrade your hero, and light up the city in Energy Clicker: Light up world.",
+    "description": [
+      "Become a master of electricity generation. Press the generator pedal to unleash power and light up the windows of the city. The faster you tap, the more energy you generate — but if it exceeds the safe limit, your generator starts to break down.",
+      "Upgrade strength, stamina, and intelligence. Strength lets you press the pedal faster; stamina keeps you from slowing down; intelligence helps you repair and improve generators.",
+      "Buy more powerful generators, boosters, and new character skins. Unlock the next city across numerous levels — each one demands more power and skill to light up every window."
+    ],
+    "icon": "img/games_pick/site_energy-pick.svg",
+    "screenshots": "img/screens_energy",
+    "stores": {
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.barsukstudio.energyclicker",
+      "appStore": "https://apps.apple.com/de/app/energy-clicker-light-up-world/id6451444008"
+    },
+    "privacy": "energy_privacy.html"
+  },
+  {
+    "slug": "miner",
+    "title": "Mining Clicker: Ax and Hammer",
+    "category": "Clicker",
+    "tagline": "Cut trees, beat stones, grow a beard",
+    "blurb": "Cut trees, smash stones, buy tools, and grow your beard in Mining Clicker: Ax and Hammer.",
+    "description": [
+      "A simple clicker set on an island with two locations — trees and stones — and a merchant on the pier.",
+      "Cut trees and hammer stones. Buy new tools, clothes, and potions. Improve your character's strength and dexterity, and grow a beard."
+    ],
+    "icon": "img/games_pick/site_miner-pick.svg",
+    "screenshots": "img/screens_miner",
+    "stores": {
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.barsukstudio.TapMinerLumberjack",
+      "appStore": "https://apps.apple.com/us/app/tap-miner-lumberjack-clicker/id1481385446"
+    },
+    "privacy": "miner_privacy.html"
+  },
+  {
+    "slug": "life",
+    "title": "Life Clicker: Move to Success",
+    "category": "Clicker · Sim",
+    "tagline": "Click and move through life",
+    "blurb": "Move through jobs, apartments, and everyday milestones in Life Clicker: Move to Success.",
+    "description": [
+      "A unique indie life simulation. Try careers in cafes and factories, relax in apartments of different levels, and have fun in different places.",
+      "Get trained for new jobs and reach the top in your business. Have fun!"
+    ],
+    "icon": "img/games_pick/site_life-pick.svg",
+    "screenshots": "img/screens_life",
+    "stores": {
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.barsukstudio.lifeclicker",
+      "appStore": "https://apps.apple.com/us/app/life-clicker-move-to-success/id1641004548"
+    },
+    "privacy": "life_privacy.html"
+  },
+  {
+    "slug": "fight",
+    "title": "Last Fight: Action RPG",
+    "category": "Action RPG",
+    "tagline": "Defeat every enemy and reach the end",
+    "blurb": "Fight through an unfriendly island in Last Fight, an action RPG with directional strikes, blocks, weapons, and armor.",
+    "description": [
+      "An action RPG with a unique real-time combat system. You're thrown onto the shore of an unfriendly island — fight your way to the end against many opponents.",
+      "The battle system has three directions of strikes and blocks: parry in the right direction or skip a beat. Each new level improves strength, agility, vitality, and endurance.",
+      "Explore the island, unlock new locations and merchants, win or buy new armor and weapons, and restore health with different foods. Good luck!"
+    ],
+    "icon": "img/games_pick/site_fight-pick.svg",
+    "screenshots": "img/screens_fight",
+    "stores": {
+      "googlePlay": "",
+      "appStore": "https://itunes.apple.com/us/app/last-fight-action-rpg/id1460153914"
+    },
+    "privacy": "fight_privacy.html"
+  },
+  {
+    "slug": "zoomdiving",
+    "title": "Zoom Diving: Picture Chain",
+    "category": "Puzzle · Relax",
+    "tagline": "An infinite-zoom puzzle to get lost in",
+    "blurb": "Relax with an infinite-zoom puzzle and discover every hidden picture in Zoom Diving: Picture Chain.",
+    "description": [
+      "A relaxing zoom game with a picture-in-picture mechanic, where each image hides the next. Zoom in, find the hidden picture, and keep going — no hidden objects, no timers, just exploration at your own pace.",
+      "Dive into a never-ending visual journey and discover where each picture leads next."
+    ],
+    "icon": "img/games_pick/site_zoomdiving-pick.png",
+    "screenshots": "img/screens_zoom",
+    "stores": {
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.barsukstudio.zoomdiving",
+      "appStore": "https://apps.apple.com/app/zoom-diving-picture-chain/id6746098392"
+    },
+    "privacy": "zoomdiving_privacy.html"
+  }
+]

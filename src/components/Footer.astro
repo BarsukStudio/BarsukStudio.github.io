@@ -1,0 +1,23 @@
+---
+import { site } from '../data/site';
+import SocialLinks from './SocialLinks.astro';
+import StoreButtons from './StoreButtons.astro';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer" id="play">
+  <div class="wrap">
+    <div>
+      <h4>Play our games</h4>
+      <StoreButtons googlePlay={site.stores.googlePlay} appStore={site.stores.appStore} label="Barsuk Studio" />
+    </div>
+    <div>
+      <h4>Follow along</h4>
+      <SocialLinks />
+    </div>
+    <div class="footer-credits">
+      <span>© {year} {site.author} · Barsuk Studio</span>
+      <span>Casual indie games in vector graphics</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,245 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import { games, getScreens, iconUrl, platforms, type Game } from '../lib/games';
+import { site } from '../data/site';
+
+export function getStaticPaths() {
+  return games.map((game) => ({ params: { slug: game.slug }, props: { game } }));
+}
+
+interface Props {
+  game: Game;
+}
+const { game } = Astro.props;
+const screens = getScreens(game.screenshots);
+const plats = platforms(game);
+
+const operatingSystem = [
+  game.stores.googlePlay ? 'Android' : null,
+  game.stores.appStore ? 'iOS' : null,
+].filter(Boolean).join(', ');
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MobileApplication',
+  name: game.title,
+  applicationCategory: 'GameApplication',
+  description: game.blurb,
+  operatingSystem,
+  image: new URL(iconUrl(game), site.url).href,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  author: { '@type': 'Organization', name: site.name, url: site.url },
+};
+---
+
+<Base title={`${game.title} — Barsuk Studio`} description={game.blurb} image={iconUrl(game)} jsonLd={jsonLd}>
+  <article>
+    <section class="g-hero">
+      <div class="wrap">
+        <a class="back" href="/#games">← All games</a>
+        <div class="g-hero-grid">
+          <div class="g-cover">
+            <img src={iconUrl(game)} alt={`${game.title} cover art`} width="1024" height="500" fetchpriority="high" />
+          </div>
+          <div class="g-intro">
+            <span class="chip">{game.category}</span>
+            <h1>{game.title}</h1>
+            <p class="g-tag">{game.tagline}</p>
+            <div class="plats">
+              {plats.map((p) => <span>{p}</span>)}
+            </div>
+            <div class="g-stores">
+              <StoreButtons googlePlay={game.stores.googlePlay} appStore={game.stores.appStore} label={game.title} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stripe" aria-hidden="true"></div>
+    </section>
+
+    <section class="g-about wrap">
+      <div class="g-desc">
+        <p class="eyebrow">About the game</p>
+        {game.description.map((para) => <p class="para">{para}</p>)}
+      </div>
+    </section>
+
+    {
+      screens.length > 0 && (
+        <section class="g-shots wrap">
+          <p class="eyebrow">Screenshots</p>
+          <div class="shots">
+            {screens.map((img, i) => (
+              <div class="shot">
+                <Image
+                  src={img}
+                  alt={`${game.title} screenshot ${i + 1}`}
+                  widths={[240, 360, 480]}
+                  sizes="(max-width: 520px) 44vw, 220px"
+                  loading={i < 3 ? 'eager' : 'lazy'}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <section class="g-cta wrap">
+      <div class="cta-box">
+        <h2>Give {game.title.split(':')[0]} a tap</h2>
+        <div class="g-stores">
+          <StoreButtons googlePlay={game.stores.googlePlay} appStore={game.stores.appStore} label={game.title} />
+        </div>
+        <a class="privacy-link" href={`/${game.privacy}`}>Privacy Policy</a>
+      </div>
+    </section>
+  </article>
+</Base>
+
+<style>
+  .g-hero {
+    padding-top: 30px;
+  }
+  .back {
+    display: inline-block;
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 26px;
+  }
+  .back:hover {
+    color: var(--accent);
+  }
+  .g-hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding-bottom: 44px;
+  }
+  .g-cover {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+    box-shadow: var(--shadow);
+  }
+  .g-cover img {
+    width: 100%;
+    aspect-ratio: 1024 / 500;
+    object-fit: cover;
+  }
+  .chip {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 4px 10px;
+  }
+  .g-intro h1 {
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    margin: 16px 0 10px;
+    font-weight: 800;
+  }
+  .g-tag {
+    color: var(--muted);
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+  }
+  .plats {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+  .plats span {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--faint);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 3px 9px;
+  }
+
+  .g-about {
+    padding-top: 48px;
+  }
+  .g-desc {
+    max-width: 68ch;
+  }
+  .para {
+    color: var(--ink);
+    opacity: 0.92;
+    margin-top: 14px;
+    font-size: 1.06rem;
+  }
+
+  .g-shots {
+    padding-top: 54px;
+  }
+  .shots {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+  .shot {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+    aspect-ratio: 9 / 19.5;
+  }
+  .shot :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .g-cta {
+    padding-top: 64px;
+  }
+  .cta-box {
+    background: radial-gradient(120% 120% at 50% 0%, rgba(246, 181, 63, 0.14), transparent 60%), var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 40px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .cta-box h2 {
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+  }
+  .cta-box .g-stores {
+    display: flex;
+    justify-content: center;
+  }
+  .cta-box .store-row {
+    justify-content: center;
+  }
+  .privacy-link {
+    color: var(--faint);
+    font-size: 0.85rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .privacy-link:hover {
+    color: var(--muted);
+  }
+
+  @media (max-width: 780px) {
+    .g-hero-grid {
+      grid-template-columns: 1fr;
+      gap: 26px;
+    }
+  }
+</style>

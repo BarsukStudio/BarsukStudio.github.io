@@ -1,0 +1,214 @@
+---
+import Base from '../layouts/Base.astro';
+import GameCard from '../components/GameCard.astro';
+import StoreButtons from '../components/StoreButtons.astro';
+import { site } from '../data/site';
+import { games } from '../lib/games';
+
+const title = 'Barsuk Studio — Casual tap games';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.name,
+  url: site.url,
+  description: site.description,
+  sameAs: [site.social.youtube, site.social.instagram, site.social.tiktok, site.social.discord].filter(Boolean),
+};
+---
+
+<Base title={title} description={site.description} jsonLd={jsonLd}>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Indie game studio</p>
+        <h1>One tap.<br />A whole&nbsp;game.</h1>
+        <p class="hero-lead">
+          Barsuk Studio makes casual games in clean vector graphics — clickers, an
+          action RPG, and puzzles you can pick up in a second and lose an hour to.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#games">Browse the games</a>
+        </div>
+        <div class="hero-stores">
+          <StoreButtons googlePlay={site.stores.googlePlay} appStore={site.stores.appStore} label="Barsuk Studio" />
+        </div>
+      </div>
+
+      <!-- Signature: the core mechanic of every game, live. -->
+      <div class="tap-stage">
+        <div class="tap-meta">
+          <span class="eyebrow">Try it</span>
+          <span class="tap-hint" data-tap-hint>Go on, tap it</span>
+        </div>
+        <button class="tap-pad" type="button" data-tap aria-label="Tap counter — tap to increase">
+          <span class="tap-count" data-tap-count>0</span>
+          <span class="tap-unit">taps</span>
+        </button>
+        <p class="tap-foot">The whole studio, in one gesture.</p>
+      </div>
+    </div>
+    <div class="stripe" aria-hidden="true"></div>
+  </section>
+
+  <section id="games" class="games">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">The arcade</p>
+        <h2>{games.length} games to tap through</h2>
+      </header>
+      <div class="grid">
+        {games.map((game, i) => <GameCard game={game} index={i} />)}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const pad = document.querySelector<HTMLButtonElement>('[data-tap]');
+  const count = document.querySelector<HTMLElement>('[data-tap-count]');
+  const hint = document.querySelector<HTMLElement>('[data-tap-hint]');
+  if (pad && count) {
+    let n = 0;
+    pad.addEventListener('pointerdown', () => {
+      n += 1;
+      count.textContent = n.toLocaleString();
+      pad.classList.remove('is-hit');
+      void pad.offsetWidth; // restart animation
+      pad.classList.add('is-hit');
+      if (hint && n >= 5) hint.textContent = 'Now you get it →';
+      if (hint && n >= 25) hint.textContent = 'Okay, go play a real one';
+    });
+  }
+</script>
+
+<style>
+  .hero {
+    padding-top: 54px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+    padding-bottom: 56px;
+  }
+  .hero-copy h1 {
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    margin: 14px 0 20px;
+    font-weight: 800;
+  }
+  .hero-lead {
+    color: var(--muted);
+    font-size: 1.12rem;
+    max-width: 46ch;
+  }
+  .hero-actions {
+    margin: 26px 0 22px;
+  }
+
+  /* Tap signature */
+  .tap-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 30px;
+    background: radial-gradient(120% 100% at 50% 0%, rgba(246, 181, 63, 0.12), transparent 70%), var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 26px;
+  }
+  .tap-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+  }
+  .tap-hint {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .tap-pad {
+    width: min(300px, 72vw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background:
+      radial-gradient(circle at 50% 35%, var(--accent-2), var(--accent) 62%, #d5952a 100%);
+    color: var(--accent-ink);
+    display: grid;
+    place-content: center;
+    text-align: center;
+    box-shadow: 0 24px 60px -24px rgba(246, 181, 63, 0.8), inset 0 -10px 24px rgba(120, 70, 0, 0.35);
+    transition: transform 0.08s ease;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .tap-pad:active {
+    transform: scale(0.94);
+  }
+  .tap-pad.is-hit {
+    animation: squish 0.22s ease;
+  }
+  .tap-count {
+    display: block;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: clamp(2.4rem, 8vw, 3.6rem);
+    line-height: 1;
+  }
+  .tap-unit {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .tap-foot {
+    font-size: 0.86rem;
+    color: var(--faint);
+  }
+  @keyframes squish {
+    40% {
+      transform: scale(0.9) scaleY(0.86);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Games section */
+  .games {
+    padding-top: 58px;
+  }
+  .section-head {
+    margin-bottom: 30px;
+  }
+  .section-head h2 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin-top: 8px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 22px;
+  }
+
+  @media (max-width: 860px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .tap-stage {
+      order: -1;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tap-pad.is-hit {
+      animation: none;
+    }
+  }
+</style>

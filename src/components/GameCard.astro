@@ -1,0 +1,143 @@
+---
+import type { Game } from '../lib/games';
+import { iconUrl, platforms } from '../lib/games';
+
+interface Props {
+  game: Game;
+  /** Load-order index — used to stagger the reveal animation. */
+  index?: number;
+}
+const { game, index = 0 } = Astro.props;
+const plats = platforms(game);
+---
+
+<a
+  class="card"
+  href={`/${game.slug}.html`}
+  style={`--i:${index}`}
+  aria-label={`${game.title} — ${game.tagline}`}
+>
+  <div class="card-art">
+    <img src={iconUrl(game)} alt={`${game.title} cover art`} loading="lazy" decoding="async" width="1024" height="500" />
+  </div>
+  <div class="card-body">
+    <div class="card-head">
+      <h3>{game.title}</h3>
+      <span class="chip">{game.category}</span>
+    </div>
+    <p class="card-tag">{game.tagline}</p>
+    <div class="card-foot">
+      <div class="plats">
+        {plats.map((p) => <span>{p}</span>)}
+      </div>
+      <span class="card-go" aria-hidden="true">Play →</span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+    animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+    animation-delay: calc(var(--i) * 60ms);
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow);
+  }
+  /* Tactile "press" — echoes the tap mechanic of the games */
+  .card:active {
+    transform: translateY(-1px) scale(0.99);
+  }
+
+  .card-art {
+    aspect-ratio: 1024 / 500;
+    background: var(--surface-2);
+    overflow: hidden;
+  }
+  .card-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .card:hover .card-art img {
+    transform: scale(1.04);
+  }
+
+  .card-body {
+    padding: 16px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  .card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .card-head h3 {
+    font-size: 1.12rem;
+  }
+  .chip {
+    flex: none;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+  .card-tag {
+    color: var(--muted);
+    font-size: 0.94rem;
+    flex: 1;
+  }
+  .card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+  }
+  .plats {
+    display: flex;
+    gap: 6px;
+  }
+  .plats span {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    color: var(--faint);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 2px 7px;
+  }
+  .card-go {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--accent);
+    transition: transform 0.16s ease;
+  }
+  .card:hover .card-go {
+    transform: translateX(3px);
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+  }
+</style>
