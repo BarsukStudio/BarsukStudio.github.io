@@ -1,184 +1,195 @@
-body {
-	font-family: 'PT Sans', sans-serif;
-	margin: 0;
-	padding: 0;
-	line-height: 1.5;
-	color: #333;
+/* ==========================================================================
+   Barsuk Studio — privacy pages
+   Matches the main site theme (warm "burrow" dark · honey accent).
+   Shared by every *_privacy.html page.
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+	--bg: #17120f;
+	--surface: #211a15;
+	--line: rgba(244, 236, 222, 0.11);
+	--ink: #f4ecde;
+	--muted: #b7a996;
+	--faint: #897c6d;
+	--accent: #f6b53f;
+	--font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+	--font-body: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+	--font-mono: 'Space Mono', ui-monospace, monospace;
 }
 
 *, *::before, *::after {
 	box-sizing: border-box;
 }
 
-/* Container and Grid */
-.container {
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 15px;
+body {
+	font-family: var(--font-body);
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+	color: var(--ink);
+	background: var(--bg);
+	background-image: radial-gradient(120% 60% at 50% -10%, rgba(246, 181, 63, 0.08), transparent 60%);
+	background-attachment: fixed;
+	-webkit-font-smoothing: antialiased;
 }
 
+a {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Layout helpers (kept from the original markup) */
+.container {
+	width: 100%;
+	max-width: 1120px;
+	margin: 0 auto;
+	padding: 0 22px;
+}
 .row {
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0 -15px;
 }
+.d-flex { display: flex; }
+.justify-content-center { justify-content: center; }
+.align-items-center { align-items: center; }
+.text-center { text-align: center; }
 
-/* Helper Classes */
-.d-flex {
+/* Header ------------------------------------------------------------------- */
+.header {
+	background: color-mix(in srgb, var(--bg) 82%, transparent);
+	border-bottom: 1px solid var(--line);
+	backdrop-filter: blur(10px);
+	padding: 16px 0;
+}
+.header .row {
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	gap: 16px;
+}
+.logo-item {
 	display: flex;
-}
-
-.justify-content-center {
-	justify-content: center;
-}
-
-.text-center {
-	text-align: center;
-}
-
-.align-items-center {
 	align-items: center;
 }
+.logo-item:first-child { justify-content: flex-start; }
+.logo-item:last-child { justify-content: flex-end; }
 
-/* Header ********************************************************************************************************************* */
-.header {
-	background: #555134;
-	padding-bottom: 5%;
-	padding-top: 3%;
-}
-.logo {
-	margin-top: 0%;
-}
 .img_logo {
-	width: 50%;
-	margin-left: -5%;
+	display: inline-block;
+	width: auto;
+	max-width: 200px;
+	margin: 0;
+}
+.img_logo img {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 .menu_item {
-	margin: 3% 8% 0;
+	margin: 0;
 }
 .menu_item a {
-	font-size: 32px;
+	font-family: var(--font-body);
+	font-size: 1rem;
 	font-weight: 600;
-	color: #E8E39C;
-	text-decoration: none;
+	color: var(--muted);
+	transition: color 0.15s ease;
 }
-.privacy-links {
-	margin-top: 5%;
+.menu_item a:hover {
+	color: var(--ink);
 }
 
-/* Privacy  ************************************************************************************************************************* */
+/* Privacy content ---------------------------------------------------------- */
 .privacy {
-	background: #EFEDE4;
-	padding-top: 5%;
-	padding-bottom: 5%;
+	padding: 56px 0 72px;
+}
+.privacy .row {
+	justify-content: center;
 }
 .privacy-text {
-	width: 70%;
-	padding: 20px;
+	width: 100%;
+	max-width: 760px;
+	padding: 0 4px;
+}
+.privacy-text h1 {
+	font-family: var(--font-display);
+	font-weight: 800;
+	font-size: clamp(2rem, 5vw, 2.8rem);
+	letter-spacing: -0.02em;
+	margin: 0 0 28px;
+	color: var(--ink);
+}
+/* Section labels are marked up as <p><strong>…</strong></p> */
+.privacy-text p strong {
+	display: inline-block;
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-size: 1.3rem;
+	letter-spacing: -0.01em;
+	color: var(--accent);
+	margin-top: 20px;
+	margin-bottom: 2px;
+}
+.privacy-text p {
+	font-size: 1.02rem;
+	color: var(--ink);
+	opacity: 0.92;
+	margin: 0 0 16px;
 }
 .privacy-text a {
-	color: #4285f4;
-	text-decoration: none;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	text-decoration-color: rgba(246, 181, 63, 0.4);
 }
 .privacy-text a:hover {
-	text-decoration: underline;
+	text-decoration-color: var(--accent);
 }
 .privacy-text ul {
-	padding-left: 20px;
-	margin-bottom: 20px;
+	padding-left: 22px;
+	margin: 0 0 20px;
+	list-style: none;
 }
 .privacy-text li {
-	margin-bottom: 5px;
+	position: relative;
+	margin-bottom: 8px;
+	color: var(--muted);
 }
-h1, .privacy-text strong {
-	font-weight: bold;
-}
-h1 {
-	margin-left: 5%;
-	font-size: 24px;
-	margin-bottom: 20px;
-}
-h3 {
-	margin-left: 3%;
-	font-size: 20px;
-	margin-bottom: 15px;
-}
-h4 {
-	margin-left: 5%;
-	font-size: 18px;
-	margin-bottom: 10px;
-}
-p {
-	font-size: 18px;
-	margin-bottom: 15px;
+.privacy-text li::before {
+	content: '';
+	position: absolute;
+	left: -18px;
+	top: 0.7em;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--accent);
 }
 
-
-/* Footer ************************************************************************************************************************ */
+/* Footer ------------------------------------------------------------------- */
 .footer {
-	background: #555134;
-	padding-bottom: 0.5%;
-	padding-top: 2%;
+	background: var(--surface);
+	border-top: 1px solid var(--line);
+	padding: 28px 0;
 }
 .name {
-	margin-left: 1%;
-	font-size: 16px;
-	color: #E8E39C;
+	margin: 0;
+	font-size: 0.86rem;
+	color: var(--faint);
 }
 .name span {
-	margin-left: 1%;
+	margin-left: 6px;
 }
 
-/* Grid classes to replace Bootstrap */
-.logo-item, .col-sm-6 {
-	width: 50%;
-	padding: 0 15px;
-}
+/* Grid classes retained from the original markup */
+.col-sm-12, .col-md-12, .col-lg-12 { width: 100%; }
 
-.col-sm-12, .col-md-12, .col-lg-12 {
-	width: 100%;
-	padding: 0 15px;
-}
-
-.col-lg-10 {
-	width: 83.333%;
-	padding: 0 15px;
-}
-
-/* Media Queries */
 @media screen and (max-width: 575px) {
-	.logo-item, .col-sm-6 {
-		width: 100%;
-	}
-	.img_logo {
-		width: 80%;
-	}
-	.menu_item {
-		margin-top: 7%;
-	}
-	.privacy-text {
-		width: 100%;
-	}
-}
-@media screen and (min-width: 576px) and (max-width: 767px) {
-	.img_logo {
-		width: 80%;
-	}
-	.privacy-text {
-		width: 90%;
-	}
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
-	.img_logo {
-		width: 65%;
-	}
-	.privacy-text {
-		width: 80%;
-	}
-}
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-	.privacy-text {
-		width: 70%;
-	}
+	.img_logo { max-width: 150px; }
+	.menu_item a { font-size: 0.92rem; }
 }

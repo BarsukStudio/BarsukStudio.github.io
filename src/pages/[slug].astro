@@ -16,6 +16,14 @@ const { game } = Astro.props;
 const screens = getScreens(game.screenshots);
 const plats = platforms(game);
 
+// Screenshots can be portrait (phone) or landscape (tablet/horizontal games).
+// Pick the layout from the real image dimensions so nothing gets cropped.
+const isLandscape = screens.length > 0 && screens[0].width > screens[0].height;
+const shotWidths = isLandscape ? [360, 560, 760] : [240, 360, 480];
+const shotSizes = isLandscape
+  ? '(max-width: 640px) 92vw, 340px'
+  : '(max-width: 520px) 44vw, 220px';
+
 const operatingSystem = [
   game.stores.googlePlay ? 'Android' : null,
   game.stores.appStore ? 'iOS' : null,
@@ -70,14 +78,14 @@ const jsonLd = {
       screens.length > 0 && (
         <section class="g-shots wrap">
           <p class="eyebrow">Screenshots</p>
-          <div class="shots">
+          <div class={`shots ${isLandscape ? 'shots--landscape' : 'shots--portrait'}`}>
             {screens.map((img, i) => (
               <div class="shot">
                 <Image
                   src={img}
                   alt={`${game.title} screenshot ${i + 1}`}
-                  widths={[240, 360, 480]}
-                  sizes="(max-width: 520px) 44vw, 220px"
+                  widths={shotWidths}
+                  sizes={shotSizes}
                   loading={i < 3 ? 'eager' : 'lazy'}
                 />
               </div>
@@ -186,15 +194,27 @@ const jsonLd = {
   .shots {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 16px;
   }
+  /* Portrait phone screenshots — many narrow columns, 9:16 frames */
+  .shots--portrait {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .shots--portrait .shot {
+    aspect-ratio: 9 / 16;
+  }
+  /* Landscape screenshots — fewer wide columns, 16:9 frames */
+  .shots--landscape {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  .shots--landscape .shot {
+    aspect-ratio: 16 / 9;
+  }
   .shot {
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     border: 1px solid var(--line);
     background: var(--surface-2);
-    aspect-ratio: 9 / 19.5;
   }
   .shot :global(img) {
     width: 100%;

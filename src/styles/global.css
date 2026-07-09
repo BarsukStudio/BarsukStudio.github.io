@@ -247,35 +247,60 @@ p {
 .wordmark {
   display: inline-flex;
   align-items: center;
-  gap: 0.6em;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
-  color: var(--ink);
 }
-.wordmark .mark {
-  width: 30px;
-  height: 30px;
-  flex: none;
-}
-.wordmark b {
-  color: var(--accent);
-  font-weight: 800;
+.wordmark img {
+  height: 54px;        /* LOGO SIZE in the header — tweak this */
+  width: auto;
+  display: block;
 }
 .site-nav {
   display: flex;
-  gap: 22px;
+  gap: 20px;
   align-items: center;
-  font-weight: 600;
-  font-size: 0.98rem;
+  flex-wrap: nowrap;
+  font-weight: 700;
+  font-size: 1rem;
 }
 .site-nav a {
-  color: var(--muted);
+  white-space: nowrap;
+}
+/* Plain nav link — cream, honey on hover */
+.nav-link {
+  color: var(--ink);
   transition: color 0.12s ease;
 }
-.site-nav a:hover {
-  color: var(--ink);
+.nav-link:hover {
+  color: var(--accent);
+}
+/* Primary nav action — honey pill, stands out next to the logo */
+.nav-cta {
+  color: var(--accent-ink);
+  background: var(--accent);
+  padding: 0.5em 1.05em;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px -12px rgba(246, 181, 63, 0.8);
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+.nav-cta:hover {
+  transform: translateY(-2px);
+  background: var(--accent-2);
+}
+
+/* Narrow screens: give the nav room, keep the CTA prominent */
+@media (max-width: 560px) {
+  .site-header .wrap {
+    height: 60px;
+  }
+  .wordmark img {
+    height: 40px;
+  }
+  .site-nav {
+    gap: 12px;
+    font-size: 0.94rem;
+  }
+  .site-nav .nav-link {
+    display: none; /* keep only the CTA — Games is reachable by scroll */
+  }
 }
 
 /* ---- Footer -------------------------------------------------------------- */
